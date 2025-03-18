@@ -349,3 +349,36 @@ footer a {
     margin: 0 auto;
     max-width: 99%; /* Keeps the content from stretching edge-to-edge */
 }
+
+/* Starry background for navbar */
+#nav-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensures stars are behind navbar content */
+    pointer-events: none; /* Prevents interference with clicks */
+    overflow: hidden; /* Keeps stars inside navbar */
+}
+
+/* Individual star styling */
+.nav-star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Glow effect */
+    pointer-events: none; /* Prevents stars from interfering with clicks */
+    z-index: -1; /* Ensure stars stay behind the text */
+}
+
+/* Ensure navbar content appears above stars */
+.navbar {
+    position: relative;
+    background-color: #0c0c3c;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* Prevents any unwanted scroll */
+}

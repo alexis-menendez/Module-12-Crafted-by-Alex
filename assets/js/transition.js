@@ -38,15 +38,15 @@ function loadNewPageContent() {
     document.getElementById('gradient-box').style.display = 'none';
     document.getElementById('extra-footer').style.display = 'none';
 
-    // debug: load new content instead of just loading blank screen
     // Create a container for the new content
     const appContainer = document.createElement('div');
     appContainer.id = 'app-container';
 
-    // Create header
+    // Create navbar with stars
     const header = document.createElement('header');
     header.innerHTML = `
         <div class="navbar">
+        <div id="nav-stars"></div> <!-- Stars container -->
             <h1 class="logo">Alex Menendez</h1>
             <nav>
                 <ul>
@@ -109,13 +109,13 @@ function loadNewPageContent() {
     document.body.appendChild(header);
     document.body.appendChild(mainContent);
     document.body.appendChild(footer);
-
-    // debug: load new content instead of just loading blank screen
-    // Append the app container to the document body
     document.body.appendChild(appContainer);
 
-    // Reattach event listeners to navigation menu
+    // Attach event listeners to navigation menu
     setupNavigation();
+
+    // Generate static stars for navbar background
+    createStaticStars();
 
     // Add event listener to update the active navbar item
     const navItems = document.querySelectorAll('.navbar nav ul li');
@@ -134,6 +134,53 @@ function loadNewPageContent() {
         });
     });
 }
+
+// Function to generate static stars in the navbar background
+function createStaticStars() {
+    const navStarsContainer = document.getElementById('nav-stars');
+
+    if (!navStarsContainer) return;
+
+    for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.classList.add('nav-star');
+    
+        let x, y, isOverlapping;
+        const size = Math.random() * 3 + 1; // Random size between 1px and 4px
+    
+        // Get bounding boxes of text elements
+        const textElements = document.querySelectorAll('.navbar .logo, .navbar nav ul li');
+    
+        do {
+            x = Math.random() * 100;
+            y = Math.random() * 100;
+            isOverlapping = false;
+    
+            textElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const starLeft = (x / 100) * window.innerWidth;
+                const starTop = (y / 100) * document.querySelector('.navbar').offsetHeight;
+    
+                if (
+                    starLeft > rect.left - 10 &&
+                    starLeft < rect.right + 10 &&
+                    starTop > rect.top - 10 &&
+                    starTop < rect.bottom + 10
+                ) {
+                    isOverlapping = true;
+                }
+            });
+        } while (isOverlapping);
+    
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${x}%`;
+        star.style.top = `${y}%`;
+    
+        navStarsContainer.appendChild(star);
+    }
+}
+
 
 // Function to handle nav bar
 function setupNavigation() {
