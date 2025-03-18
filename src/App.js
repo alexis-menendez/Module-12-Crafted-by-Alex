@@ -1,10 +1,12 @@
+// file path: module-12-crafted-by-alex/src/App.js
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Projects from './pages/Projects';
-import Resume from './pages/Resume';
+import HomePage from './src/pages/homepage';
+import About from './src/pages/about';
+import Contact from './src/pages/contact';
+import Projects from './src/pages/projects';
+import Resume from './src/pages/resume';
 
 function App() {
   return (

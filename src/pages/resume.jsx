@@ -1,3 +1,5 @@
+// file path: module-12-crafted-by-alex/src/pages/about.jsx
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';

@@ -1,3 +1,5 @@
+// file path: module-12-crafted-by-alex/src/components/navbar.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 

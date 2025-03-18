@@ -1,4 +1,7 @@
+// file path: module-12-crafted-by-alex/src/components/footer.js
+
 import React from 'react';
+import './src/assets/css/style.css';
 
 const Footer = () => {
   return (
