@@ -5,27 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const gradientBox = document.getElementById('gradient-box');
     const starsContainer = document.getElementById('stars-container');
     const circle = document.getElementById('circle');
-    
-    //const navTitle = document.querySelector('.navbar .logo');
-
-    //if (navTitle) {
-        //navTitle.addEventListener('click', () => {
-            //console.log("Navbar title clicked!"); // Debugging: Check console to confirm the event fires
-    
-            // Make sure elements are visible again
-            //gradientBox.style.display = 'flex';
-            //starsContainer.style.display = 'block';
-            //circle.style.display = 'flex';
-    
-            // Smoothly fade them in
-            //gradientBox.style.opacity = '1';
-            //starsContainer.style.opacity = '1';
-            //circle.style.opacity = '1';
-            //extraFooter.style.opacity = '1';
-        //});
-    //} else {
-        //console.warn("Navbar title not found!");
-    //}
+    const extraFooter = document.getElementById('extra-footer'); 
+    const topBanner = document.getElementById('top-banner'); 
 
     nameElement.addEventListener('click', () => {
         // Fade out existing elements
@@ -34,11 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         circle.style.transition = 'opacity 1s ease-out';
         nameElement.style.transition = 'opacity 1s ease-out';
         extraFooter.style.transition = 'opacity 1s ease-out';
+        topBanner.style.transition = 'opacity 1s ease-out';
 
         gradientBox.style.opacity = '0';
         starsContainer.style.opacity = '0';
         circle.style.opacity = '0';
         nameElement.style.opacity = '0';
+        extraFooter.style.opacity = '0';
+        TopBanner.style.opacity = '0';
 
         // Wait for fade-out to complete, then load new content
         setTimeout(() => {
@@ -51,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadNewPageContent() {
     // Clear the existing content
     document.body.innerHTML = '';
+
+    // debug: load new content instead of just loading blank screen
+    // Create a container for the new content
+    const appContainer = document.createElement('div');
+    appContainer.id = 'app-container';
 
     // Create header
     const header = document.createElement('header');
@@ -111,8 +100,7 @@ function loadNewPageContent() {
     footer.innerHTML = `
         <p>&copy; 2025 Alex Menendez</p>
         <a href="#">GitHub</a> | 
-        <a href="#">LinkedIn</a> | 
-        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
     `;
 
     // Append everything to the body
@@ -120,7 +108,11 @@ function loadNewPageContent() {
     document.body.appendChild(mainContent);
     document.body.appendChild(footer);
 
-    // Apply navigation event listeners
+    // debug: load new content instead of just loading blank screen
+    // Append the app container to the document body
+    document.body.appendChild(appContainer);
+
+    // Reattach event listeners to navigation menu
     setupNavigation();
 
     // Add event listener to update the active navbar item
