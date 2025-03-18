@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./src/pages/homepage"; 
 import About from "./src/pages/about";
 import Contact from "./src/pages/contact";
-import Projects from "./src/pages/Projects";
-import Resume from "./src/pages/Resume";
+import Projects from "./src/pages/projects";
+import Resume from "./src/pages/resume";
 import "./src/assets/css/style.css"; 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
