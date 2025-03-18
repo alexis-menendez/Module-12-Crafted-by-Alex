@@ -5,25 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const gradientBox = document.getElementById('gradient-box');
     const starsContainer = document.getElementById('stars-container');
     const circle = document.getElementById('circle');
-    const navTitle = document.querySelector('.navbar .logo');
+    
+    //const navTitle = document.querySelector('.navbar .logo');
 
-    if (navTitle) {
-        navTitle.addEventListener('click', () => {
-            console.log("Navbar title clicked!"); // Debugging: Check console to confirm the event fires
+    //if (navTitle) {
+        //navTitle.addEventListener('click', () => {
+            //console.log("Navbar title clicked!"); // Debugging: Check console to confirm the event fires
     
             // Make sure elements are visible again
-            gradientBox.style.display = 'flex';
-            starsContainer.style.display = 'block';
-            circle.style.display = 'flex';
+            //gradientBox.style.display = 'flex';
+            //starsContainer.style.display = 'block';
+            //circle.style.display = 'flex';
     
             // Smoothly fade them in
-            gradientBox.style.opacity = '1';
-            starsContainer.style.opacity = '1';
-            circle.style.opacity = '1';
-        });
-    } else {
-        console.warn("Navbar title not found!");
-    }
+            //gradientBox.style.opacity = '1';
+            //starsContainer.style.opacity = '1';
+            //circle.style.opacity = '1';
+        //});
+    //} else {
+        //console.warn("Navbar title not found!");
+    //}
 
     nameElement.addEventListener('click', () => {
         // Fade out existing elements

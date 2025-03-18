@@ -205,12 +205,12 @@ body {
     transition: opacity 1s ease-in-out; /* Smooth fade-in */
 }
 
-.logo {
+/* .logo {
     font-size: 28px;
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
-}
+}*/
 
 /* Navigation Bar */
 .navbar {
@@ -225,7 +225,6 @@ body {
     font-size: 28px;
     color: #fff;
     text-transform: uppercase;
-    cursor: pointer;
 }
 
 .navbar nav ul {
