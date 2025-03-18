@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //gradientBox.style.opacity = '1';
             //starsContainer.style.opacity = '1';
             //circle.style.opacity = '1';
+            //extraFooter.style.opacity = '1';
         //});
     //} else {
         //console.warn("Navbar title not found!");
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         starsContainer.style.transition = 'opacity 1s ease-out';
         circle.style.transition = 'opacity 1s ease-out';
         nameElement.style.transition = 'opacity 1s ease-out';
+        extraFooter.style.transition = 'opacity 1s ease-out';
 
         gradientBox.style.opacity = '0';
         starsContainer.style.opacity = '0';

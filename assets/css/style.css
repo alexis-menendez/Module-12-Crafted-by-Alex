@@ -285,6 +285,25 @@ footer a {
     margin: 0 10px;
 }
 
+#extra-footer {
+    background: #0c0c3c; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: -10px; /* Optional: adjust spacing */
+    transition: opacity 1s ease-in-out;
+}
+
+#extra-footer a {
+    color: #ffdd57;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#extra-footer a:hover {
+    text-decoration: underline;
+}
+
 /* Floating Back-to-Top Button */
 .back-to-top {
     position: fixed;
