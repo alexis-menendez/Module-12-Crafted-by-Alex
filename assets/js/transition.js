@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         circle.style.opacity = '0';
         nameElement.style.opacity = '0';
         extraFooter.style.opacity = '0';
-        TopBanner.style.opacity = '0';
+        topBanner.style.opacity = '0';
 
         // Wait for fade-out to complete, then load new content
         setTimeout(() => {
@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadNewPageContent() {
     // Clear the existing content
-    document.body.innerHTML = '';
+    document.getElementById('top-banner').style.display = 'none';
+    document.getElementById('gradient-box').style.display = 'none';
+    document.getElementById('extra-footer').style.display = 'none';
 
     // debug: load new content instead of just loading blank screen
     // Create a container for the new content
