@@ -1,4 +1,4 @@
-// File path: module-12-crafted-by-alex/assets/js/starryskies.js
+// File path: module-12-crafted-by-alex/src/assets/js/starryskies.js
 
 // Wait for the entire document to be fully loaded before running the script
   document.addEventListener('DOMContentLoaded', () => {

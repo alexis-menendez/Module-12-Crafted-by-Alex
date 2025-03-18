@@ -1,4 +1,4 @@
-// file path: assets/js/transition.js
+// file path: assets/js/src/transition.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const nameElement = document.querySelector('#circle h1'); 
