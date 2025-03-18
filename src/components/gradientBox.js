@@ -1,8 +1,24 @@
-import React from 'react';
-import starryskies from '.src/assets/js/starryskies';
-import transition from './transition.js';
+import React, { useEffect } from 'react';
 
-function GradientBox() {
+const GradientBox = () => {
+  useEffect(() => {
+    const gradientBox = document.getElementById('gradient-box');
+    const h1 = document.querySelector('#circle h1');
+    
+    h1.addEventListener('mouseenter', () => {
+      gradientBox.classList.add('hovered');
+    });
+
+    h1.addEventListener('mouseleave', () => {
+      gradientBox.classList.remove('hovered');
+    });
+
+    return () => {
+      h1.removeEventListener('mouseenter', () => {});
+      h1.removeEventListener('mouseleave', () => {});
+    };
+  }, []);
+
   return (
     <div id="gradient-box">
       <div id="stars-container"></div>
@@ -16,6 +32,6 @@ function GradientBox() {
       <img src="/assets/images/cloud5.png" className="cloud" id="cloud5" alt="Cloud 5" />
     </div>
   );
-}
+};
 
 export default GradientBox;
