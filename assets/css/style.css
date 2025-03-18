@@ -344,4 +344,8 @@ footer a {
     text-decoration: underline;
 }
 
-  
+#content {
+    padding: 8px; /* Small padding for spacing */
+    margin: 0 auto;
+    max-width: 99%; /* Keeps the content from stretching edge-to-edge */
+}
