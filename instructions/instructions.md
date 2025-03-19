@@ -2,7 +2,7 @@
 Being a web developer means being part of a community. You need a place to share your projects, whether you're applying for jobs, freelancing, or collaborating with other developers.
 
 # React Portfolio
-Now that you’ve completed multiple projects, you’ll create a portfolio using React. This will help you stand out from developers whose portfolios don’t use the latest technologies.
+Now that you’ve completed multiple projects, you’ll create a portfolio using React & Vite. This will help you stand out from developers whose portfolios don’t use the latest technologies.
 For this challenge, you’ll deploy your application to Netlify. Follow the instructions in activity 27-Evr_Git-Deploy to create a build that you can deploy.
 
 # User Story
