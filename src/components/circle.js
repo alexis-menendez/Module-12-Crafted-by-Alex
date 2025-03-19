@@ -1,76 +1,57 @@
 // file path: module-12-crafted-by-alex/src/components/circle.js
 
 import React, { useEffect } from 'react';
-import TopBanner from './src/components/top-banner.js';
-import GradientBox from './src/components/gradient-box.js';
-import StarsContainer from './src/components/stars-container.js';
-import ExtraFooter from './src/components/extra-footer.js';
-import './src/assets/css/style.css';
+import TopBanner from './top-banner.js';
+import GradientBox from './gradient-box.js';
+import StarsContainer from './stars-container.js';
+import ExtraFooter from './extra-footer.js';
+import '../../assets/css/style.css';
 
-// Wait for the entire document to be fully loaded before running the script
-document.addEventListener('DOMContentLoaded', () => {
+const Circle = () => {
+  useEffect(() => {
+    const circle = document.getElementById('circle');
+    const staticStarsContainer = document.getElementById('static-stars-container');
+    const gradientBox = document.getElementById('gradient-box');
+    const h1 = document.querySelector('#circle h1');
 
-// Set poistion for the moon
-const circleRect = circle.getBoundingClientRect();
-const circleX = circleRect.left + circleRect.width / 2;
-const circleY = circleRect.top + circleRect.height / 2;
+    if (!circle || !staticStarsContainer || !gradientBox || !h1) return;
 
-circle.addEventListener('mouseenter', () => {
-  moveStarsToCenter();
-  circle.classList.add('hover');
-  staticStarsContainer.classList.add('transparent'); // Add this line
-});
+    const moveStarsToCenter = () => {
+      circle.classList.add('hover');
+      staticStarsContainer.classList.add('transparent');
+    };
 
-circle.addEventListener('mouseleave', () => {
-  resetStars();
-  circle.classList.remove('hover');
-  staticStarsContainer.classList.remove('transparent'); // Add this line
-});
+    const resetStars = () => {
+      circle.classList.remove('hover');
+      staticStarsContainer.classList.remove('transparent');
+    };
 
+    const handleMouseEnter = () => {
+      gradientBox.classList.add('hovered');
+      circle.classList.add('hovered');
+      staticStarsContainer.classList.add('faded');
+    };
 
-// change color of gradiet box when hovering over header 1
-h1.addEventListener('mouseenter', () => {
-gradientBox.classList.add('hovered');
-circle.classList.add('hovered');
-staticStarsContainer.classList.add('faded');
-});
+    const handleMouseLeave = () => {
+      gradientBox.classList.remove('hovered');
+      circle.classList.remove('hovered');
+      staticStarsContainer.classList.remove('faded');
+    };
 
-h1.addEventListener('mouseleave', () => {
-gradientBox.classList.remove('hovered');
-circle.classList.remove('hovered');
-staticStarsContainer.classList.remove('faded');
-});
+    circle.addEventListener('mouseenter', moveStarsToCenter);
+    circle.addEventListener('mouseleave', resetStars);
+    h1.addEventListener('mouseenter', handleMouseEnter);
+    h1.addEventListener('mouseleave', handleMouseLeave);
 
-// change opacity of clouds when hovering over header 1
-h1.addEventListener('mouseenter', () => {
-const clouds = [
-  document.getElementById('cloud1'),
-  document.getElementById('cloud2'),
-  document.getElementById('cloud3'),
-  document.getElementById('cloud4'),
-  document.getElementById('cloud5')
-];
+    return () => {
+      circle.removeEventListener('mouseenter', moveStarsToCenter);
+      circle.removeEventListener('mouseleave', resetStars);
+      h1.removeEventListener('mouseenter', handleMouseEnter);
+      h1.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
 
-clouds.forEach((cloud) => {
-  cloud.classList.add('animate');
-});
-});
-
-h1.addEventListener('mouseleave', () => {
-const clouds = [
-  document.getElementById('cloud1'),
-  document.getElementById('cloud2'),
-  document.getElementById('cloud3'),
-  document.getElementById('cloud4'),
-  document.getElementById('cloud5')
-];
-
-clouds.forEach((cloud) => {
-  cloud.classList.remove('animate');
-});
-});
-
-});
-
+  return <div id="circle"><h1>Hover Me</h1></div>;
+};
 
 export default Circle;

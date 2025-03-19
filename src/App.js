@@ -1,15 +1,17 @@
-// file path: module-12-crafted-by-alex/src/App.js
+// File path: module-12-crafted-by-alex/src/index.js
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './src/pages/homepage';
-import About from './src/pages/about';
-import Contact from './src/pages/contact';
-import Projects from './src/pages/projects';
-import Resume from './src/pages/resume';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./src/pages/homepage"; 
+import About from "./src/pages/about";
+import Contact from "./src/pages/contact";
+import Projects from "./src/pages/projects";
+import Resume from "./src/pages/resume";
+import "./src/assets/css/style.css"; 
 
-function App() {
-  return (
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -19,7 +21,5 @@ function App() {
         <Route path="/resume" element={<Resume />} />
       </Routes>
     </Router>
-  );
-}
-
-export default App;
+  </React.StrictMode>
+);

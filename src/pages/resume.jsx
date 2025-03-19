@@ -1,4 +1,4 @@
-// file path: module-12-crafted-by-alex/src/pages/about.jsx
+// file path: module-12-crafted-by-alex/src/pages/resume.jsx
 
 import React from 'react';
 import Navbar from '../components/Navbar';

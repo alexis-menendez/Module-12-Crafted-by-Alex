@@ -1,11 +1,11 @@
 // File path: src/components/extra-footer.js
 
 import React, { useEffect } from 'react';
-import TopBanner from './src/components/top-banner.js';
-import GradientBox from './src/components/gradient-box.js';
-import StarsContainer from './src/components/stars-container.js';
-import Circle from './src/components/circle.js';
-import './src/assets/css/style.css';
+import TopBanner from './top-banner.js';
+import GradientBox from './gradient-box.js';
+import StarsContainer from './stars-container.js';
+import Circle from './circle.js';
+import '../../assets/css/style.css';
 
 const ExtraFooter = () => {
   return (

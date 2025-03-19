@@ -1,4 +1,4 @@
-/* File path: module-12-crafted-by-alex/src/assets/css/app.css */
+/* File path: module-12-crafted-by-alex/src/App.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
@@ -381,19 +381,4 @@ footer a {
     justify-content: space-between;
     align-items: center;
     overflow: hidden; /* Prevents any unwanted scroll */
-}
-
-.portfolio-item a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #007bff; /* Change to match your theme */
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-.portfolio-item a:hover {
-  background-color: #0056b3; /* Darker shade on hover */
 }

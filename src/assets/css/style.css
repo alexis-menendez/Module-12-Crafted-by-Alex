@@ -382,3 +382,18 @@ footer a {
     align-items: center;
     overflow: hidden; /* Prevents any unwanted scroll */
 }
+
+.portfolio-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff; /* Change to match your theme */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .portfolio-item a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
