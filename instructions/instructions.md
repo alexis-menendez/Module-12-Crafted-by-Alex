@@ -112,5 +112,5 @@ Your portfolio should look polished and professional:
 
 # Submit both:
 1. The URL of the deployed application.
-2. The URL of the GitHub repository, with a descriptive README.
+2. The URL of the GitHub repository, with a descriptive README
 
