@@ -1,0 +1,44 @@
+/* file path: src/assets/Portfolio.module.css */
+
+.portfolio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .portfolio-item {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .portfolio-item h3 {
+    margin: 10px 0;
+  }
+  
+  .portfolio-item a {
+    display: block;
+    margin: 5px 0;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .portfolio-item a:hover {
+    text-decoration: underline;
+  }
