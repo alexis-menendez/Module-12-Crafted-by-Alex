@@ -23,10 +23,10 @@ const Sky = () => {
 
     const starSizes = [
       { size: 5, quantity: 10 },
-      { size: 4, quantity: 25 },
+      { size: 4, quantity: 50 },
       { size: 3, quantity: 150 },
-      { size: 2, quantity: 250 },
-      { size: 1, quantity: 450 },
+      { size: 2, quantity: 350 },
+      { size: 1, quantity: 550 },
     ];
 
     function doesOverlap(x, y, starSize) {
@@ -93,8 +93,10 @@ const Sky = () => {
     ctx.lineWidth = 0.5;
 
     stars.forEach((starA, i) => {
-      stars.forEach((starB, j) => {
-        if (i >= j) return;
+        if (starA.size < 3) return;
+      
+        stars.forEach((starB, j) => {
+          if (j <= i || starB.size < 3) return;
 
         const dx = starA.x - starB.x;
         const dy = starA.y - starB.y;
