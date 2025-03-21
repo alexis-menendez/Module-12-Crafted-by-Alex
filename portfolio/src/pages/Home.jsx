@@ -4,7 +4,7 @@ import React from 'react';
 import styles from "../assets/css/Home.module.css";
 
 
-const Resume = () => {
+const Home = () => {
   return (
     <div>
       <Navigation />
