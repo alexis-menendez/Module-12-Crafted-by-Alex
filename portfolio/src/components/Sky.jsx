@@ -10,6 +10,7 @@ const Sky = () => {
   const [stars, setStars] = useState([]);
   const [moonHovered, setMoonHovered] = useState(false);
   const [twinkleDisabled, setTwinkleDisabled] = useState(false);
+  const [eclipseActive, setEclipseActive] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -133,11 +134,11 @@ const Sky = () => {
 
   return (
     <div
-      className={`${styles.blueRectangle} ${moonHovered ? styles.moonHovered : ''}`}
-      ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
+        className={`${styles.blueRectangle} ${moonHovered ? styles.moonHovered : ''}`}
+        ref={containerRef}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        >
       {/* Smooth gradient overlay */}
       <div
         className={styles.gradientOverlay}
@@ -177,14 +178,29 @@ const Sky = () => {
             setMoonHovered(true);
             setTimeout(() => {
               setTwinkleDisabled(true);
-            }, 4000); // delay disabling twinkle by 2 seconds
+              setEclipseActive(true); // Start eclipse
+            }, 1000);
+  
+            // Slide eclipse away after a few seconds
+            setTimeout(() => {
+              setEclipseActive(false);
+            }, 6000);
           }}
           onMouseLeave={() => {
             setMoonHovered(false);
-            setTwinkleDisabled(false); // immediately re-enable twinkle
+            setTwinkleDisabled(false);
+            setEclipseActive(false); // Reset eclipse if hover ends early
           }}
-      ></div>
-    </div>
+        >
+          {moonHovered && (
+            <div
+                className={`${styles.eclipseDisc} ${
+                    eclipseActive ? styles.eclipseSlide : ''
+                }`}
+            />
+        )}
+        </div>
+      </div>
   );
 };
 
