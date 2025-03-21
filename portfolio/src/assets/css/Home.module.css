@@ -7,18 +7,44 @@
     height: 80vh; /* Adjust as needed */
   }
   
-  .blue-rectangle {
-    background-color: blue;
-    width: 300px; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
+  .blueRectangle {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background: radial-gradient(circle, midnightblue 20%, black 80%);
+    overflow: hidden;
   }
   
-  .white-circle {
+  .moon {
+    width: 350px;
+    height: 350px;
     background-color: white;
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
     border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: absolute; /* Keeps it independent of flexbox but still centered */
   }
+  
+  .moon:hover {
+    box-shadow: 0 0 120px rgba(255, 255, 255, 1);
+    background-color: #fff9c4;
+  }
+  
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+  }
+  
+  .connectionCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
