@@ -22,14 +22,11 @@ const Sky = () => {
     const circleY = boxHeight / 2;
 
     const starSizes = [
-      { size: 8, quantity: 1 },
-      { size: 7, quantity: 2 },
-      { size: 6, quantity: 2 },
       { size: 5, quantity: 10 },
       { size: 4, quantity: 25 },
-      { size: 3, quantity: 50 },
-      { size: 2, quantity: 150 },
-      { size: 1, quantity: 250 },
+      { size: 3, quantity: 150 },
+      { size: 2, quantity: 250 },
+      { size: 1, quantity: 450 },
     ];
 
     function doesOverlap(x, y, starSize) {
@@ -48,7 +45,7 @@ const Sky = () => {
             y = Math.random() * boxHeight;
             tries++;
           } while (doesOverlap(x, y, size) && tries < 100);
-          const twinkleClass = `twinkle${Math.floor(Math.random() * 3) + 1}`;
+          const twinkleClass = `twinkle${Math.floor(Math.random() * 17) + 1}`;
           newStars.push({ x, y, size, offsetX: 0, offsetY: 0, twinkleClass });
         }
       });
