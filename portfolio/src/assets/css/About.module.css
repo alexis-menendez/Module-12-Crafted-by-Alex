@@ -1,19 +1,26 @@
 /* file path: src/assets/About.module.css */
 
-.about-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh; /* Adjust as needed */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
+
+.aboutContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px; 
+  padding: 50px;
+  flex-wrap: wrap; 
   }
   
-  .about-photo img {
-    width: 150px; /* Adjust as needed */
+  .aboutPhoto img {
+    width: 250px; 
     height: auto;
     border-radius: 50%;
     margin-right: 20px;
   }
   
-  .about-text {
-    max-width: 600px; /* Adjust as needed */
+  .aboutText {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    max-width: 600px; 
   }

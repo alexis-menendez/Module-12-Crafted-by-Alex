@@ -1,14 +1,18 @@
 /* file path: src/assets/Footer.module.css */
 
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
+
 footer {
+    font-family: "M PLUS Rounded 1c", sans-serif;
     text-align: center;
     padding: 20px;
     background: #0c0c3c;
     color: white;
-    margin-top: 50px;
+    margin-top: 0px;
   }
   
   footer a {
+    font-family: "M PLUS Rounded 1c", sans-serif;
     color: #ffdd57;
     margin: 0 10px;
     text-decoration: none;
