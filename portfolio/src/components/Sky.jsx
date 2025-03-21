@@ -118,11 +118,28 @@ const Sky = () => {
     });
   };
 
+  const handleMouseLeave = () => {
+    const canvas = canvasRef.current;
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    setStars((prevStars) =>
+      prevStars.map((star) => ({
+        ...star,
+        offsetX: 0,
+        offsetY: 0,
+      }))
+    );
+  };
+
   return (
     <div
       className={styles.blueRectangle}
       ref={containerRef}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <canvas ref={canvasRef} className={styles.connectionCanvas} />
       {stars.map((star, index) => (
