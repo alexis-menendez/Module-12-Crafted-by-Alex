@@ -10,18 +10,18 @@ const Sky = () => {
   const [stars, setStars] = useState([]);
   const [moonHovered, setMoonHovered] = useState(false);
   const [twinkleDisabled, setTwinkleDisabled] = useState(false);
-  const [eclipseState, setEclipseState] = useState("idle"); // 'idle' | 'entering' | 'hovered' | 'exiting'
+  const [eclipseState, setEclipseState] = useState("idle");
   const [dimmingActive, setDimmingActive] = useState(false);
 
   useEffect(() => {
     if (eclipseState === "hovered") {
       const timeout = setTimeout(() => {
         setDimmingActive(true);
-      }, 500); // delay in ms (adjust as needed)
+      }, 500);
   
       return () => clearTimeout(timeout);
     } else {
-      setDimmingActive(false); // reset dim when not hovered
+      setDimmingActive(false); 
     }
   }, [eclipseState]);
 
@@ -216,10 +216,9 @@ const Sky = () => {
             setTwinkleDisabled(false);
             setEclipseState("exiting");
           
-            // After fade-out, reset
             setTimeout(() => {
               setEclipseState("idle");
-            }, 5000); // match fade-out duration
+            }, 5000); 
           }}
           
         >
