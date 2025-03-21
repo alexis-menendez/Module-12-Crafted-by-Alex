@@ -1,7 +1,5 @@
 // file path: portfolio/src/components/Sky.jsx
 
-// file path: portfolio/src/components/Sky.jsx
-
 import React, { useEffect, useState, useRef } from 'react';
 import styles from "../assets/css/Home.module.css";
 
@@ -64,7 +62,6 @@ const Sky = () => {
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
 
-    // Update star positions with spring effect
     setStars((prevStars) =>
       prevStars.map((star) => {
         const dx = mouseX - star.x;
@@ -83,7 +80,6 @@ const Sky = () => {
       })
     );
 
-    // Draw connection lines
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -91,7 +87,9 @@ const Sky = () => {
     canvas.width = containerRef.current.offsetWidth;
     canvas.height = containerRef.current.offsetHeight;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "rgba(0, 0, 0, 0.02)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
     ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
     ctx.lineWidth = 0.5;
 
@@ -116,27 +114,46 @@ const Sky = () => {
     });
   };
 
+  const handleMouseLeave = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    setStars((prevStars) =>
+      prevStars.map((star) => ({
+        ...star,
+        offsetX: 0,
+        offsetY: 0,
+      }))
+    );
+  };
+
   return (
     <div
       className={styles.blueRectangle}
       ref={containerRef}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <canvas ref={canvasRef} className={styles.connectionCanvas} />
-      {stars.map((star, index) => (
-        <div
-          key={index}
-          className={styles.star}
-          style={{
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-            left: `${star.x}px`,
-            top: `${star.y}px`,
-            transform: `translate(${star.offsetX}px, ${star.offsetY}px) scale(${1 + star.offsetX * 0.002})`,
-            transition: 'transform 0.9s cubic-bezier(0.23, 1, 0.32, 1)',
-          }}
-        ></div>
-      ))}
+      {stars.map((star, index) => {
+        const twinkleClass = styles[`twinkle${(index % 3) + 1}`]; // picks twinkle1, twinkle2, twinkle3
+        return (
+          <div
+            key={index}
+            className={`${styles.star} ${twinkleClass}`}
+            style={{
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              left: `${star.x}px`,
+              top: `${star.y}px`,
+              transform: `translate(${star.offsetX}px, ${star.offsetY}px) scale(${1 + star.offsetX * 0.002})`,
+              transition: 'transform 0.9s cubic-bezier(0.23, 1, 0.32, 1)',
+            }}
+          ></div>
+        );
+      })}
       <div className={styles.moon} ref={circleRef}></div>
     </div>
   );
