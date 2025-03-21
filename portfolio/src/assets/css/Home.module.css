@@ -32,6 +32,11 @@
     box-shadow: 0 0 120px rgba(255, 255, 255, 1);
     background-color: #fff9c4;
   }
+
+  .moonHovered {
+    background: radial-gradient(circle, rgb(223, 178, 0) 20%, darkred 80%) !important;
+    transition: background 10.5s ease-in-out;
+  }
   
   @keyframes twinkle {
     0%, 100% {

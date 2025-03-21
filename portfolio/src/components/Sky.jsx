@@ -10,6 +10,7 @@ const Sky = () => {
   const circleRef = useRef(null);
   const canvasRef = useRef(null);
   const [stars, setStars] = useState([]);
+  const [moonHovered, setMoonHovered] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -136,7 +137,7 @@ const Sky = () => {
 
   return (
     <div
-      className={styles.blueRectangle}
+      className={`${styles.blueRectangle} ${moonHovered ? styles.moonHovered : ''}`}
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -158,8 +159,13 @@ const Sky = () => {
           }}
         ></div>
       ))}
-      <div className={styles.moon} ref={circleRef}></div>
-    </div>
+    <div
+        className={styles.moon}
+        ref={circleRef}
+        onMouseEnter={() => setMoonHovered(true)}
+        onMouseLeave={() => setMoonHovered(false)}
+    ></div>
+  </div>
   );
 };
 
