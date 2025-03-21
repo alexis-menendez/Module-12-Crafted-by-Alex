@@ -230,3 +230,105 @@
   z-index: 1;
   pointer-events: none;
 }
+
+/* All clouds share these base styles */
+[class*="cloud"] {
+  position: absolute;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 5; /* In front of the moon and eclipse disc */
+  animation-name: floatCloud;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Unique settings for each cloud */
+.cloud1 {
+  width: 450px;
+  animation-duration: 80s;
+  animation-delay: 0s;
+  top: 10%;
+  left: -35%;
+}
+
+ .cloud2 {
+  width: 1050px;
+  animation-duration: 40s;
+  animation-delay: 5s;
+  top: 50%;
+  left: -65%;
+}
+
+.cloud3 {
+  width: 700px;
+  animation-duration: 50s;
+  animation-delay: 10s;
+  top: 20%;
+  left: -51%;
+}
+
+.cloud4 {
+  width: 550px;
+  animation-duration: 60s;
+  animation-delay: 15s;
+  top: 40%;
+  left: -42%;
+}
+
+.cloud5 {
+  width: 950px;
+  animation-duration: 70s;
+  animation-delay: 20s;
+  top: 30%;
+  left: -70%;
+}
+
+.cloud6 {
+  width: 600px;
+  animation-duration: 90s;
+  animation-delay: 25s;
+  top: 15%;
+  left: -45%;
+}
+
+.cloud7 {
+  width: 450px;
+  animation-duration: 120s;
+  animation-delay: 40s;
+  top: 55%;
+  left: -31%;
+}
+
+.cloud8 {
+  width: 950px;
+  animation-duration: 100s;
+  animation-delay: 30s;
+  top: 25%;
+  left: -70%;
+}
+
+.cloud9 {
+  width: 700px;
+  animation-duration: 130s;
+  animation-delay: 45s;
+  top: 45%;
+  left: -55%;
+}
+
+.cloud10 {
+  width: 550px;
+  animation-duration: 110s;
+  animation-delay: 35s;
+  top: 35%;
+  left: -40%;
+}
+
+/* Animation: move cloud left to right */
+@keyframes floatCloud {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(150vw);
+  }
+}
