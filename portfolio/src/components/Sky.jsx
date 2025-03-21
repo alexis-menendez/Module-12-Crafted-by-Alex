@@ -1,7 +1,5 @@
 // file path: portfolio/src/components/Sky.jsx
 
-// file path: portfolio/src/components/Sky.jsx
-
 import React, { useEffect, useState, useRef } from 'react';
 import styles from "../assets/css/Home.module.css";
 
@@ -49,10 +47,8 @@ const Sky = () => {
             y = Math.random() * boxHeight;
             tries++;
           } while (doesOverlap(x, y, size) && tries < 100);
-          // attempting to add twinkle effect without losing star movement
           const twinkleClass = `twinkle${Math.floor(Math.random() * 3) + 1}`;
           newStars.push({ x, y, size, offsetX: 0, offsetY: 0, twinkleClass });
-          // old code: newStars.push({ x, y, size, offsetX: 0, offsetY: 0 });
         }
       });
 
@@ -63,11 +59,12 @@ const Sky = () => {
   }, []);
 
   const handleMouseMove = (event) => {
+    if (moonHovered) return;
+
     const rect = containerRef.current.getBoundingClientRect();
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
 
-    // Update star positions with spring effect
     setStars((prevStars) =>
       prevStars.map((star) => {
         const dx = mouseX - star.x;
@@ -77,8 +74,8 @@ const Sky = () => {
 
         if (distance < maxDistance) {
           const effectStrength = 1 - distance / maxDistance;
-          const offsetX = (dx * 1.5) * effectStrength;
-          const offsetY = (dy * 1.5) * effectStrength;
+          const offsetX = dx * 1.5 * effectStrength;
+          const offsetY = dy * 1.5 * effectStrength;
           return { ...star, offsetX, offsetY };
         }
 
@@ -86,7 +83,6 @@ const Sky = () => {
       })
     );
 
-    // Draw connection lines
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -142,30 +138,41 @@ const Sky = () => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Smooth gradient overlay */}
+      <div
+        className={styles.gradientOverlay}
+        style={{ opacity: moonHovered ? 1 : 0 }}
+      />
+
       <canvas ref={canvasRef} className={styles.connectionCanvas} />
+
       {stars.map((star, index) => (
         <div
           key={index}
-          // attempting to add star twinkle without losing star movement
           className={`${styles.star} ${styles[star.twinkleClass]}`}
-          // old code: className={styles.star}
           style={{
             width: `${star.size}px`,
             height: `${star.size}px`,
             left: `${star.x}px`,
             top: `${star.y}px`,
-            transform: `translate(${star.offsetX}px, ${star.offsetY}px) scale(${1 + star.offsetX * 0.002})`,
-            transition: 'transform 0.9s cubic-bezier(0.23, 1, 0.32, 1)',
+            transform: moonHovered
+              ? `translate(calc(50vw - ${star.x}px), calc(50vh - ${star.y}px)) scale(0.2)`
+              : `translate(${star.offsetX}px, ${star.offsetY}px) scale(${1 + star.offsetX * 0.002})`,
+            opacity: moonHovered ? 0 : 0.8,
+            transition: moonHovered
+              ? `transform 1.2s ease-in-out ${index * 10}ms, opacity 1.2s ease-in-out ${index * 10}ms`
+              : 'transform 0.9s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease',
           }}
         ></div>
       ))}
-    <div
+
+      <div
         className={styles.moon}
         ref={circleRef}
         onMouseEnter={() => setMoonHovered(true)}
         onMouseLeave={() => setMoonHovered(false)}
-    ></div>
-  </div>
+      ></div>
+    </div>
   );
 };
 
