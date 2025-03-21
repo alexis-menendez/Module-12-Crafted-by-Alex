@@ -9,6 +9,7 @@ const Sky = () => {
   const canvasRef = useRef(null);
   const [stars, setStars] = useState([]);
   const [moonHovered, setMoonHovered] = useState(false);
+  const [twinkleDisabled, setTwinkleDisabled] = useState(false);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -148,29 +149,41 @@ const Sky = () => {
 
       {stars.map((star, index) => (
         <div
-          key={index}
-          className={`${styles.star} ${styles[star.twinkleClass]}`}
-          style={{
-            width: `${star.size}px`,
-            height: `${star.size}px`,
-            left: `${star.x}px`,
-            top: `${star.y}px`,
-            transform: moonHovered
-              ? `translate(calc(50vw - ${star.x}px), calc(50vh - ${star.y}px)) scale(0.2)`
-              : `translate(${star.offsetX}px, ${star.offsetY}px) scale(${1 + star.offsetX * 0.002})`,
-            opacity: moonHovered ? 0 : 0.8,
-            transition: moonHovered
-              ? `transform 1.2s ease-in-out ${index * 10}ms, opacity 1.2s ease-in-out ${index * 10}ms`
-              : 'transform 0.9s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.3s ease',
-          }}
-        ></div>
+        key={index}
+        className={`
+            ${styles.star}
+            ${styles[star.twinkleClass]}
+            ${moonHovered ? styles.starFadeOut : ''}
+            ${twinkleDisabled ? styles.noTwinkle : ''}
+          `}
+        style={{
+          width: `${star.size}px`,
+          height: `${star.size}px`,
+          left: `${star.x}px`,
+          top: `${star.y}px`,
+          transform: moonHovered
+            ? `translate(calc(50vw - ${star.x}px), calc(50vh - ${star.y}px)) scale(0.2)`
+            : `translate(${star.offsetX}px, ${star.offsetY}px) scale(${1 + star.offsetX * 0.002})`,
+          transition: moonHovered
+            ? `transform 1.2s ease-in-out ${index * 10}ms`
+            : 'transform 0.9s cubic-bezier(0.23, 1, 0.32, 1)',
+        }}
+      ></div>
       ))}
 
       <div
         className={styles.moon}
         ref={circleRef}
-        onMouseEnter={() => setMoonHovered(true)}
-        onMouseLeave={() => setMoonHovered(false)}
+        onMouseEnter={() => {
+            setMoonHovered(true);
+            setTimeout(() => {
+              setTwinkleDisabled(true);
+            }, 4000); // delay disabling twinkle by 2 seconds
+          }}
+          onMouseLeave={() => {
+            setMoonHovered(false);
+            setTwinkleDisabled(false); // immediately re-enable twinkle
+          }}
       ></div>
     </div>
   );
