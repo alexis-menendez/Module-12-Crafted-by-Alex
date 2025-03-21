@@ -1,8 +1,6 @@
 // file path: src/pages/Contact.jsx
 
 import React, { useState } from 'react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
 import styles from "../assets/css/Contact.module.css";
 
 const Contact = () => {
@@ -44,7 +42,6 @@ const Contact = () => {
 
   return (
     <div>
-      <Navigation />
       <div className={styles.contactContent}>
         <h2>Contact Me</h2>
         <form onSubmit={handleSubmit}>
@@ -86,7 +83,6 @@ const Contact = () => {
           You can also reach me on <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       </div>
-      <Footer />
     </div>
   );
 };

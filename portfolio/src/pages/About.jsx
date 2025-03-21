@@ -1,14 +1,11 @@
 // file path: src/pages/About.jsx`
 
 import React from 'react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
 import styles from "../assets/css/About.module.css";
 
 const About = () => {
   return (
     <div>
-      <Navigation />
       <div className={styles.aboutContent}>
         <div className="about-photo">
           <img src="path/to/your/photo.jpg" alt="Your Name" />
@@ -19,7 +16,6 @@ const About = () => {
           </p>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

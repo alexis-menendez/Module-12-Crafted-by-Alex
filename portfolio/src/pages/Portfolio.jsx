@@ -1,8 +1,6 @@
 // file path: src/pages/Portfolio.jsx
 
 import React from 'react';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
 import styles from "../assets/css/Portfolio.module.css";
 
 const projects = [
@@ -53,7 +51,6 @@ const projects = [
 const Portfolio = () => {
   return (
     <div>
-      <Navigation />
       <div className={styles.portfolioContent}>
         <h2>My Portfolio</h2>
         <div className="portfolio-grid">
@@ -68,7 +65,6 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
