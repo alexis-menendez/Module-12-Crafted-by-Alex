@@ -11,6 +11,8 @@ const Sky = () => {
   const [moonHovered, setMoonHovered] = useState(false);
   const [twinkleDisabled, setTwinkleDisabled] = useState(false);
   const [eclipseActive, setEclipseActive] = useState(false);
+  const [dimmingActive, setDimmingActive] = useState(false);
+
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -144,6 +146,9 @@ const Sky = () => {
         className={styles.gradientOverlay}
         style={{ opacity: moonHovered ? 1 : 0 }}
       />
+      <div
+        className={`${styles.eclipseDimOverlay} ${eclipseActive ? styles.eclipseDimOverlayActive : ''}`}
+      />
 
       <canvas ref={canvasRef} className={styles.connectionCanvas} />
 
@@ -178,13 +183,14 @@ const Sky = () => {
             setMoonHovered(true);
             setTimeout(() => {
               setTwinkleDisabled(true);
-              setEclipseActive(true); // Start eclipse
-            }, 1000);
+              setEclipseActive(true);
+              setEclipseActive(true); 
+            }, 3000);
   
             // Slide eclipse away after a few seconds
             setTimeout(() => {
               setEclipseActive(false);
-            }, 6000);
+            }, 1000);
           }}
           onMouseLeave={() => {
             setMoonHovered(false);
