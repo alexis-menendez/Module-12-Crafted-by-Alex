@@ -74,6 +74,23 @@
   }
 }
 
+.eclipseDimOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.9) 80%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 3s ease-in-out;
+}
+
+.eclipseDimOverlayActive {
+  opacity: 1;
+}
+
 .star {
   position: absolute;
   background-color: white;
