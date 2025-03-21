@@ -191,27 +191,25 @@ const Sky = () => {
       ))}
 
       <div
-        className={styles.moon}
+        className={`${styles.moon} ${dimmingActive ? styles.moonGlowEclipse : ''}`}
         ref={circleRef}
         onMouseEnter={() => {
             setMoonHovered(true);
             setTwinkleDisabled(true);
             setEclipseState("entering");
           
-              // 🌑 Eclipse disc logic (unchanged)
-  setTimeout(() => {
-    setEclipseState("entering");
+            setTimeout(() => {
+            setEclipseState("entering");
 
-    setTimeout(() => {
-      setEclipseState("hovered");
-    }, 9000);
-  }, 9000);
+            setTimeout(() => {
+            setEclipseState("hovered");
+            }, 9000);
+            }, 9000);
 
-  // 🌘 Dim the background after 5s (new)
-  setTimeout(() => {
-    setDimmingActive(true);
-  }, 5000);
-}}
+            setTimeout(() => {
+            setDimmingActive(true);
+            }, 5000);
+            }}
           
           onMouseLeave={() => {
             setMoonHovered(false);
@@ -221,7 +219,7 @@ const Sky = () => {
             // After fade-out, reset
             setTimeout(() => {
               setEclipseState("idle");
-            }, 1000); // match fade-out duration
+            }, 5000); // match fade-out duration
           }}
           
         >

@@ -47,6 +47,11 @@
   box-shadow: 0 0 120px rgba(255, 255, 255, 1);
 }
 
+.moonHovered .moon.moonGlowEclipse {
+  box-shadow: 0 0 100px 40px rgba(255, 150, 100, .5);
+  transition: box-shadow 3s ease-in-out;
+}
+
 .eclipseDisc {
   position: absolute;
   width: 100%;
