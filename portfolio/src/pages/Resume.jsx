@@ -3,7 +3,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import styles from "/src/assets/Resume.module.css";
+import styles from "../assets/css/Resume.module.css";
 
 const Resume = () => {
   return (

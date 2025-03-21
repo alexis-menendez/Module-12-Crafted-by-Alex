@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import styles from "/src/assets/Contact.module.css";
+import styles from "../assets/css/Contact.module.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({

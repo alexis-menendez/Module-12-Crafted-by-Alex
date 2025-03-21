@@ -3,7 +3,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import styles from "/src/assets/Portfolio.module.css";
+import styles from "../assets/css/Portfolio.module.css";
 
 const projects = [
   {

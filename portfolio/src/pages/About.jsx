@@ -3,7 +3,7 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import styles from "/src/assets/About.module.css";
+import styles from "../assets/css/About.module.css";
 
 const About = () => {
   return (
