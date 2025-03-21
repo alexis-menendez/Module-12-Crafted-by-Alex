@@ -1,7 +1,7 @@
 // file path: portfolio/src/pages/Home.jsx
 
 import React from 'react';
-import styles from "/src/assets/Home.modules.css";
+import styles from "/src/assets/Home.module.css";
 
 
 const Resume = () => {
