@@ -10,9 +10,20 @@ const Sky = () => {
   const [stars, setStars] = useState([]);
   const [moonHovered, setMoonHovered] = useState(false);
   const [twinkleDisabled, setTwinkleDisabled] = useState(false);
-  const [eclipseActive, setEclipseActive] = useState(false);
+  const [eclipseState, setEclipseState] = useState("idle"); // 'idle' | 'entering' | 'hovered' | 'exiting'
   const [dimmingActive, setDimmingActive] = useState(false);
 
+  useEffect(() => {
+    if (eclipseState === "hovered") {
+      const timeout = setTimeout(() => {
+        setDimmingActive(true);
+      }, 500); // delay in ms (adjust as needed)
+  
+      return () => clearTimeout(timeout);
+    } else {
+      setDimmingActive(false); // reset dim when not hovered
+    }
+  }, [eclipseState]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -147,8 +158,11 @@ const Sky = () => {
         style={{ opacity: moonHovered ? 1 : 0 }}
       />
       <div
-        className={`${styles.eclipseDimOverlay} ${eclipseActive ? styles.eclipseDimOverlayActive : ''}`}
+        className={`${styles.eclipseDimOverlay} ${
+        dimmingActive ? styles.eclipseDimOverlayActive : ""
+      }`}
       />
+
 
       <canvas ref={canvasRef} className={styles.connectionCanvas} />
 
@@ -181,29 +195,47 @@ const Sky = () => {
         ref={circleRef}
         onMouseEnter={() => {
             setMoonHovered(true);
-            setTimeout(() => {
-              setTwinkleDisabled(true);
-              setEclipseActive(true);
-              setEclipseActive(true); 
-            }, 3000);
-  
-            // Slide eclipse away after a few seconds
-            setTimeout(() => {
-              setEclipseActive(false);
-            }, 1000);
-          }}
+            setTwinkleDisabled(true);
+            setEclipseState("entering");
+          
+              // 🌑 Eclipse disc logic (unchanged)
+  setTimeout(() => {
+    setEclipseState("entering");
+
+    setTimeout(() => {
+      setEclipseState("hovered");
+    }, 9000);
+  }, 9000);
+
+  // 🌘 Dim the background after 5s (new)
+  setTimeout(() => {
+    setDimmingActive(true);
+  }, 5000);
+}}
+          
           onMouseLeave={() => {
             setMoonHovered(false);
             setTwinkleDisabled(false);
-            setEclipseActive(false); // Reset eclipse if hover ends early
+            setEclipseState("exiting");
+          
+            // After fade-out, reset
+            setTimeout(() => {
+              setEclipseState("idle");
+            }, 1000); // match fade-out duration
           }}
+          
         >
           {moonHovered && (
             <div
-                className={`${styles.eclipseDisc} ${
-                    eclipseActive ? styles.eclipseSlide : ''
-                }`}
-            />
+            className={[
+            styles.eclipseDisc,
+            eclipseState === "entering" && styles.eclipseSlideIn,
+            eclipseState === "hovered" && styles.eclipseHold,
+            eclipseState === "exiting" && styles.eclipseFadeOut,
+        ]
+        .filter(Boolean)
+        .join(" ")}
+        />
         )}
         </div>
       </div>

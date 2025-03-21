@@ -53,25 +53,24 @@
   height: 100%;
   background-color: black;
   border-radius: 50%;
-  left: -200%; /* 👈 Start farther out */
+  left: -200%;
   opacity: 0;
-  transition: left 3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: 4;
 }
 
-.eclipseSlide {
-  left: 0%;
-  opacity: 1;
-  animation: eclipseExit 6s ease-in-out 3s forwards;
+.eclipseSlideIn {
+  animation: slideToCenter 9s ease-in-out forwards;
 }
 
-@keyframes eclipseExit {
-  0% {
-    left: 0%;
-  }
-  100% {
-    left: 450%; /* 👈 Go far past the moon */
-  }
+.eclipseHold {
+  left: 0%;
+  opacity: 1;
+}
+
+.eclipseFadeOut {
+  left: 0%;
+  opacity: 0;
+  transition: opacity 10s ease-in-out;
 }
 
 .eclipseDimOverlay {
@@ -89,6 +88,17 @@
 
 .eclipseDimOverlayActive {
   opacity: 1;
+}
+
+@keyframes slideToCenter {
+  0% {
+    left: -200%;
+    opacity: 1;
+  }
+  100% {
+    left: 0%;
+    opacity: 1;
+  }
 }
 
 .star {
