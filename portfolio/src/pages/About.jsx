@@ -9,7 +9,7 @@ const About = () => {
     <div>
       <div className={styles.aboutContent}>
        <div className={styles.aboutPhoto}>
-        <img src="public/assets/images/portfolio-picture-bigfoot.webp" alt="Bigfoot" />
+        <img src="assets/images/portfolio-picture-bigfoot.webp" alt="Bigfoot" />
          </div>
            <div className={styles.aboutText}>
              <p>
