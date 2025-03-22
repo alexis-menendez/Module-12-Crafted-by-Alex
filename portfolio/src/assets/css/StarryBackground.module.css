@@ -40,13 +40,14 @@
   .twinkle4 { animation: twinkle 1.75s infinite; }
   .twinkle5 { animation: twinkle 2s infinite; }
   
-  /* Page content styling */
   .pageContent {
     position: relative;
-    z-index: 10; 
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 40px;
+    margin-top: -100px;
   }
   
