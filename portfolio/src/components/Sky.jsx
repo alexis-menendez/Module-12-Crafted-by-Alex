@@ -162,7 +162,14 @@ const Sky = () => {
         dimmingActive ? styles.eclipseDimOverlayActive : ""
       }`}
       />
-
+      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+        <img
+          key={num}
+          src={`/assets/images/cloud${num}.png`}
+          className={styles[`cloud${num}`]}
+          alt={`Cloud ${num}`}
+        />
+      ))}
 
       <canvas ref={canvasRef} className={styles.connectionCanvas} />
 
