@@ -1,13 +1,13 @@
 /* file path: src/assets/Portfolio.module.css */
 
-.portfolio-content {
+.portfolioContent {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
   }
   
-  .portfolio-grid {
+  .portfolioGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
@@ -15,30 +15,50 @@
     max-width: 1200px;
   }
   
-  .portfolio-item {
-    background-color: white;
+  .portfolioItem {
+    background-color: rgba(0, 0, 80, 0.4);
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
   
-  .portfolio-item img {
+  .portfolioItem img {
     width: 100%;
     height: auto;
     border-radius: 5px;
   }
   
-  .portfolio-item h3 {
+  .portfolioItem h3 {
     margin: 10px 0;
   }
   
-  .portfolio-item a {
+  .portfolioItem a {
     display: block;
     margin: 5px 0;
-    color: #007bff;
+    color: #ffdd57;
     text-decoration: none;
   }
   
-  .portfolio-item a:hover {
+  .portfolioItem a:hover {
     text-decoration: underline;
+    color: #9cd7ff;
   }
+
+  /* Add this to Portfolio.module.css */
+
+.portfolioBox {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1200px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}

@@ -1,7 +1,8 @@
 // file path: src/pages/Contact.jsx
 
 import React, { useState } from 'react';
-import styles from "../assets/css/Contact.module.css";
+import StarryBackground from '../components/StarryBackground'; // Updated import
+import styles from '../assets/css/Contact.module.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,15 +36,14 @@ const Contact = () => {
       setErrors(newErrors);
     } else {
       setErrors({});
-      // Handle form submission (e.g., send email)
       alert('Form submitted successfully!');
     }
   };
 
   return (
-    <div>
+    <StarryBackground>
       <div className={styles.contactContent}>
-        <h2>Contact Me</h2>
+        <h2> Contact Me </h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">Name:</label>
@@ -54,7 +54,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
             />
-            {errors.name && <p className="error">{errors.name}</p>}
+            {errors.name && <p className={styles.error}>{errors.name}</p>}
           </div>
           <div>
             <label htmlFor="email">Email:</label>
@@ -65,7 +65,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && <p className="error">{errors.email}</p>}
+            {errors.email && <p className={styles.error}>{errors.email}</p>}
           </div>
           <div>
             <label htmlFor="message">Message:</label>
@@ -75,7 +75,7 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
             ></textarea>
-            {errors.message && <p className="error">{errors.message}</p>}
+            {errors.message && <p className={styles.error}>{errors.message}</p>}
           </div>
           <button type="submit">Submit</button>
         </form>
@@ -83,7 +83,7 @@ const Contact = () => {
           You can also reach me on <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       </div>
-    </div>
+    </StarryBackground>
   );
 };
 
