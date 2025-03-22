@@ -1,19 +1,24 @@
 // file path: src/pages/Resume.jsx
 
 import React from 'react';
+import StarryBackground from '../components/StarryBackground';
 import styles from "../assets/css/Resume.module.css";
 
 const Resume = () => {
   return (
-    <div>
+    <StarryBackground>
       <div className={styles.resumeContent}>
-        <h2>My Resume</h2>
-        <a href="path/to/your/resume.pdf" download="Alex_Menendez_Resume.pdf">Download Resume</a>
-        <div className="resume-image">
-          <img src="path/to/your/resume.jpg" alt="Resume" />
+        <a href="public/assets/pdf/TechResume2025.pdf" download="TechResume2025.pdf">
+          Thanks for stopping by!
+        </a>
+        <a href="public/assets/pdf/TechResume2025.pdf" download="TechResume2025.pdf">
+          Click here to download my resume as a PDF
+        </a>
+        <div className={styles.resumeImage}>
+          <img src="/assets/images/TechResume2025.webp" alt="Resume" />
         </div>
       </div>
-    </div>
+    </StarryBackground>
   );
 };
 
