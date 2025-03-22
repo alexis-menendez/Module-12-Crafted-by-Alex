@@ -6,7 +6,6 @@
     overflow: hidden;
   }
   
-  /* Canvas for additional effects (optional) */
   .connectionCanvas {
     position: absolute;
     top: 0;
@@ -16,7 +15,6 @@
     pointer-events: none;
   }
   
-  /* Stars */
   .star {
     position: absolute;
     background-color: white;
@@ -25,7 +23,6 @@
     box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.5);
   }
   
-  /* Twinkling animation */
   @keyframes twinkle {
     0%, 100% {
       opacity: 0.1;
@@ -42,15 +39,14 @@
   .twinkle3 { animation: twinkle 1.5s infinite; }
   .twinkle4 { animation: twinkle 1.75s infinite; }
   .twinkle5 { animation: twinkle 2s infinite; }
-  /* Add more twinkle variations as needed */
   
   /* Page content styling */
   .pageContent {
     position: relative;
-    z-index: 10; /* Ensures content appears in front of stars */
+    z-index: 10; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
   

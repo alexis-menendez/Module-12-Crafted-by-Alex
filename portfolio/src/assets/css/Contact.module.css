@@ -5,7 +5,7 @@
 .contactContent {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  background: rgba(0, 0, 0, 0.6); 
   padding: 10px;
   border-radius: 10px;
   width: 90%;
@@ -13,14 +13,28 @@
   color: white;
   text-align: center;
   margin: auto;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); /* Soft glow effect */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* Ensure form elements look good */
+.contactContent a {
+  color: #ffdd57; 
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contactContent a:hover {
+  color: #9cd7ff;
+}
+
+.contactContent h2 {
+  color: #ffdd57;
+  margin-bottom: 20px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -30,6 +44,9 @@ form {
 
 form div {
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns labels and inputs to the left */
 }
 
 input, textarea {
@@ -39,15 +56,24 @@ input, textarea {
   border-radius: 5px;
   border: none;
   font-size: 1rem;
+  background-color: #1a1a2e; 
+  color: #ffffff; 
 }
 
 textarea {
   min-height: 100px;
 }
 
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+  width: 100%;
+}
+
 button {
-  background-color: #3a5fcd;
-  color: white;
+  background-color: #ffdd57;
+  color: black;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -56,7 +82,7 @@ button {
 }
 
 button:hover {
-  background-color: #ffdd57;
+  background-color: #9cd7ff;
   color: black;
 }
   
