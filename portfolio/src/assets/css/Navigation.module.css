@@ -34,11 +34,11 @@ nav {
   }
   
   nav ul li a:hover {
-    color: #ffdd57; /* Gold color on hover */
+    color: #ffdd57; 
   }
   
   nav ul li.active a {
-    color: #ffdd57; /* Gold color when active */
+    color: #ffdd57; 
     font-weight: 700;
   }
 

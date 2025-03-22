@@ -1,7 +1,7 @@
 // file path: src/pages/Contact.jsx
 
 import React, { useState } from 'react';
-import StarryBackground from '../components/StarryBackground'; // Updated import
+import StarryBackground from '../components/StarryBackground';
 import styles from '../assets/css/Contact.module.css';
 
 const Contact = () => {
