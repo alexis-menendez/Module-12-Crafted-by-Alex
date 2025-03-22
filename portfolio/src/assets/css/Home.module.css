@@ -231,18 +231,16 @@
   pointer-events: none;
 }
 
-/* All clouds share these base styles */
 [class*="cloud"] {
   position: absolute;
   opacity: 0.6;
   pointer-events: none;
-  z-index: 5; /* In front of the moon and eclipse disc */
+  z-index: 5; 
   animation-name: floatCloud;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
-/* Unique settings for each cloud */
 .cloud1 {
   width: 450px;
   animation-duration: 80s;
@@ -323,7 +321,6 @@
   left: -40%;
 }
 
-/* Animation: move cloud left to right */
 @keyframes floatCloud {
   0% {
     transform: translateX(0%);
