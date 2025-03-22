@@ -243,72 +243,72 @@
 
 .cloud1 {
   width: 450px;
-  animation-duration: 80s;
-  animation-delay: 0s;
+  animation-duration: 81s;
+  animation-delay: 1s;
   top: 10%;
   left: -35%;
 }
 
  .cloud2 {
   width: 1050px;
-  animation-duration: 40s;
-  animation-delay: 5s;
+  animation-duration: 42s;
+  animation-delay: 6s;
   top: 50%;
   left: -65%;
 }
 
 .cloud3 {
   width: 700px;
-  animation-duration: 50s;
-  animation-delay: 10s;
+  animation-duration: 53s;
+  animation-delay: 12s;
   top: 20%;
   left: -51%;
 }
 
 .cloud4 {
   width: 550px;
-  animation-duration: 60s;
-  animation-delay: 15s;
+  animation-duration: 64s;
+  animation-delay: 14s;
   top: 40%;
   left: -42%;
 }
 
 .cloud5 {
   width: 950px;
-  animation-duration: 70s;
-  animation-delay: 20s;
+  animation-duration: 75s;
+  animation-delay: 21s;
   top: 30%;
   left: -70%;
 }
 
 .cloud6 {
   width: 600px;
-  animation-duration: 90s;
-  animation-delay: 25s;
+  animation-duration: 96s;
+  animation-delay: 26s;
   top: 15%;
   left: -45%;
 }
 
 .cloud7 {
   width: 450px;
-  animation-duration: 120s;
-  animation-delay: 40s;
+  animation-duration: 127s;
+  animation-delay: 42s;
   top: 55%;
   left: -31%;
 }
 
 .cloud8 {
   width: 950px;
-  animation-duration: 100s;
-  animation-delay: 30s;
+  animation-duration: 108s;
+  animation-delay: 34s;
   top: 25%;
   left: -70%;
 }
 
 .cloud9 {
   width: 700px;
-  animation-duration: 130s;
-  animation-delay: 45s;
+  animation-duration: 139s;
+  animation-delay: 41s;
   top: 45%;
   left: -55%;
 }
@@ -316,7 +316,7 @@
 .cloud10 {
   width: 550px;
   animation-duration: 110s;
-  animation-delay: 35s;
+  animation-delay: 36s;
   top: 35%;
   left: -40%;
 }
