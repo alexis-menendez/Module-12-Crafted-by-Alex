@@ -1,4 +1,4 @@
-/* file path: src/app.jsx */
+// file path: portfolio/public/index.html
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
