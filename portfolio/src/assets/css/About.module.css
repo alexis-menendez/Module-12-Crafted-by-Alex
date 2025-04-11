@@ -4,23 +4,45 @@
 
 .aboutContent {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
-  gap: 10px; 
-  padding: 50px;
-  flex-wrap: wrap; 
+  gap: 2vw;
+  padding: 5vw;
+}
+
+.aboutPhoto img {
+  width: 20vw;         /* Fluid image size based on viewport width */
+  max-width: 250px;    /* Don't get bigger than original */
+  height: auto;
+  border-radius: 50%;
+  margin-right: 2vw;
+}
+
+.aboutText {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.25rem);  /* Fluid font size */
+  max-width: 60ch;      /* Limits line length for readability */
+  line-height: 1.6;
+  flex: 1 1 300px;       /* Allows shrinking on small screens */
+}
+
+/* Just a little polish for smaller screens */
+@media (max-width: 768px) {
+  .aboutContent {
+    flex-direction: column;
+    align-items: center;
+    padding: 8vw 4vw;
   }
-  
+
   .aboutPhoto img {
-    width: 250px; 
-    height: auto;
-    border-radius: 50%;
-    margin-right: 20px;
+    width: 35vw;
+    margin-right: 0;
+    margin-bottom: 4vw;
   }
-  
+
   .aboutText {
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    max-width: 600px; 
+    text-align: center;
   }
+}
