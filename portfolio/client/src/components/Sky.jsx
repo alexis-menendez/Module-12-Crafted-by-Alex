@@ -1,4 +1,4 @@
-// file path: portfolio/src/components/Sky.jsx
+// file path: /portfolio/client/src/components/Sky.jsx
 
 import React, { useEffect, useState, useRef } from 'react';
 import styles from "../assets/css/Home.module.css";

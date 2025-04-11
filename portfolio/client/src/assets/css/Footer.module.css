@@ -1,0 +1,73 @@
+/* file path: /portfolio/client/src/assets/css//Footer.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
+
+footer {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem); 
+    text-align: center;
+    padding: 20px;
+    background: #0c0c3c;
+    color: white;
+    margin-top: 0px;
+  }
+  
+  footer a {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+    color: #ffdd57;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    footer {
+      font-size: clamp(0.65rem, 1vw, 0.85rem);
+      padding: clamp(1rem, 2.5vw, 1.5rem);
+    }
+  
+    footer a {
+      margin: 0 clamp(0.4rem, 2vw, 0.75rem);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    footer {
+      font-size: clamp(0.6rem, 0.9vw, 0.8rem);
+      padding: clamp(0.8rem, 2vw, 1.2rem);
+    }
+  
+    footer a {
+      margin: 0 clamp(0.3rem, 1.5vw, 0.6rem);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    footer {
+      font-size: clamp(0.58rem, 0.85vw, 0.75rem);
+      padding: clamp(0.75rem, 1.8vw, 1rem);
+    }
+  
+    footer a {
+      display: block;
+      margin: clamp(0.4rem, 1.5vw, 0.6rem) 0;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    footer {
+      font-size: clamp(0.55rem, 0.8vw, 0.7rem);
+      padding: clamp(0.6rem, 1.5vw, 0.85rem);
+    }
+  
+    footer a {
+      font-size: clamp(0.6rem, 1vw, 0.8rem);
+      margin: clamp(0.3rem, 1.2vw, 0.5rem) 0;
+    }
+  }
+  
+  

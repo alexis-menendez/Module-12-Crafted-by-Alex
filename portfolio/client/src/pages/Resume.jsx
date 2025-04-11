@@ -1,4 +1,4 @@
-// file path: src/pages/Resume.jsx
+// file path: /portfolio/client/src/pages/Resume.jsx
 
 import React from 'react';
 import StarryBackground from '../components/StarryBackground';

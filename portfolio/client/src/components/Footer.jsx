@@ -1,4 +1,4 @@
-// file path: portfolio/src/components/Footer.jsx
+// file path: /portfolio/client/src/components/Footer.jsx
 
 import React from 'react';
 import styles from "../assets/css/Footer.module.css";

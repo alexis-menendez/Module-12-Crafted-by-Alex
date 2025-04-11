@@ -1,4 +1,4 @@
-// file: src/components/StarryBackground.jsx
+// file: /portfolio/client/src/components/StarryBackground.jsx
 
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../assets/css/StarryBackground.module.css';

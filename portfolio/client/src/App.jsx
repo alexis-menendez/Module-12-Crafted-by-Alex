@@ -1,4 +1,4 @@
-// file path: src/app.jsx
+// file path: /portfolio/client/src/app.jsx
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';

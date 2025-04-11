@@ -1,4 +1,4 @@
-// file path: src/pages/About.jsx`
+// file path: /portfolio/client/src/pages/About.jsx`
 
 import React from 'react';
 import { Link } from 'react-router-dom';

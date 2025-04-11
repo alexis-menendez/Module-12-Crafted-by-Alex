@@ -1,4 +1,4 @@
-// file path: src/pages/Contact.jsx
+// file path: /portfolio/client/src/pages/Contact.jsx
 
 import React, { useState } from 'react';
 import StarryBackground from '../components/StarryBackground';
