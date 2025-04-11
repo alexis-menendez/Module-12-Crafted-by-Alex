@@ -35,13 +35,16 @@ const Sky = () => {
     const circleX = boxWidth / 2;
     const circleY = boxHeight / 2;
 
+    const screenScale = Math.min(window.innerWidth / 1440, 1);
+
     const starSizes = [
-      { size: 5, quantity: 10 },
-      { size: 4, quantity: 50 },
-      { size: 3, quantity: 150 },
-      { size: 2, quantity: 350 },
-      { size: 1, quantity: 550 },
+      { size: 5 * screenScale, quantity: 10 },
+      { size: 4 * screenScale, quantity: 50 },
+      { size: 3 * screenScale, quantity: 150 },
+      { size: 2 * screenScale, quantity: 350 },
+      { size: 1 * screenScale, quantity: 550 },
     ];
+    
 
     function doesOverlap(x, y, starSize) {
       const distFromMoon = Math.sqrt((x - circleX) ** 2 + (y - circleY) ** 2);
