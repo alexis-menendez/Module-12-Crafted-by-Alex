@@ -1,19 +1,19 @@
-/* file path: src/assets/Contact.module.css */
+/* file path: src/assets/css/Contact.module.css */
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap');
 
 .contactContent {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;
-  background: rgba(0, 0, 0, 0.6); 
-  padding: 10px;
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3.5vw 4vw; 
+  border-radius: 1rem;
   width: 90%;
-  max-width: 600px;
+  max-width: 50rem;
   color: white;
   text-align: center;
-  margin: auto;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); 
+  margin: 4vh auto; 
+  box-shadow: 0 0 2rem rgba(255, 255, 255, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +21,7 @@
 }
 
 .contactContent a {
-  color: #ffdd57; 
+  color: #ffdd57;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -32,41 +32,45 @@
 
 .contactContent h2 {
   color: #ffdd57;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 form {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
   align-items: center;
+  gap: 1.5rem;
 }
 
 form div {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   border: none;
   font-size: 1rem;
-  background-color: #1a1a2e; 
-  color: #ffffff; 
+  background-color: #1a1a2e;
+  color: #ffffff;
+  box-sizing: border-box;
 }
 
 textarea {
-  min-height: 100px;
+  min-height: 8rem;
 }
 
 label {
   font-weight: bold;
-  margin-bottom: 5px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   text-align: left;
   width: 100%;
 }
@@ -74,43 +78,20 @@ label {
 button {
   background-color: #ffdd57;
   color: black;
-  padding: 10px;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
 button:hover {
   background-color: #9cd7ff;
   color: black;
 }
-  
-  .error {
-    color: red;
-    font-size: 0.875em;
-  }
 
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 15px;
-    }
-  
-    .rightNav {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      margin-top: 10px;
-    }
-  
-    .homeLink {
-      font-size: 28px;
-    }
-  
-    .rightNav li {
-      font-size: 18px;
-    }
-  }
-  
+.error {
+  color: red;
+  font-size: 0.875em;
+}

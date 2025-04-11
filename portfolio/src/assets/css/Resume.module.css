@@ -17,12 +17,14 @@
 
 .resumeContent h2 {
   margin-bottom: 20px;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .resumeContent a {
   margin-bottom: 20px;
   color: #ffdd57;
   font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: bold;
   text-decoration: none;
   font-weight: bold;
@@ -43,27 +45,56 @@
     margin-bottom: 20px;
   }
 
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 15px;
-    }
-  
-    .rightNav {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      margin-top: 10px;
-    }
-  
-    .homeLink {
-      font-size: 28px;
-    }
-  
-    .rightNav li {
-      font-size: 18px;
-    }
+  /* Media Queries */
+
+/* Medium screens: tablets, small laptops */
+@media (max-width: 1024px) {
+  .resumeContent {
+    padding: 30px;
   }
-  
-  
+
+  .resumeImage img {
+    max-width: 90%;
+  }
+}
+
+/* Smaller tablets / large phones */
+@media (max-width: 768px) {
+  .resumeContent {
+    padding: 25px;
+  }
+
+  .resumeImage img {
+    max-width: 100%;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .resumeContent {
+    padding: 20px;
+  }
+
+  .resumeContent h2 {
+    font-size: 1.4rem;
+  }
+
+  .resumeContent a {
+    font-size: 1.05rem;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 400px) {
+  .resumeContent h2 {
+    font-size: 1.25rem;
+  }
+
+  .resumeContent a {
+    font-size: 1rem;
+  }
+
+  .resumeContent {
+    padding: 15px;
+  }
+}

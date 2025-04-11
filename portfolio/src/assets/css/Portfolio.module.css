@@ -1,86 +1,86 @@
-/* file path: src/assets/Portfolio.module.css */
+/* file path: portfolio/src/assets/css/Portfolio.module.css */
 
 .portfolioContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vw 4vw; /* fluid padding */
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* default: 3 items per row */
+  gap: 2vw;
+  width: 100%;
+  max-width: 80rem;
+}
+
+/* Tablets – 2 columns */
+@media (max-width: 1024px) {
   .portfolioGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .portfolioItem {
-    background-color: rgba(0, 0, 80, 0.4);
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .portfolioItem img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .portfolioItem h3 {
-    margin: 10px 0;
-  }
-  
-  .portfolioItem a {
-    display: block;
-    margin: 5px 0;
-    color: #ffdd57;
-    text-decoration: none;
-  }
-  
-  .portfolioItem a:hover {
-    text-decoration: underline;
-    color: #9cd7ff;
-  }
+}
 
-  .portfolioBox {
+/* Small screens – 1 column */
+@media (max-width: 600px) {
+  .portfolioGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Portfolio Items */
+.portfolioItem {
+  background-color: rgba(0, 0, 80, 0.4);
+  padding: 2rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.portfolioItem:hover {
+  transform: scale(1.02);
+}
+
+.portfolioItem img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.portfolioItem h3 {
+  margin: 1rem 0;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+.portfolioItem a {
+  display: block;
+  margin: 0.5rem 0;
+  color: #ffdd57;
+  text-decoration: none;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.portfolioItem a:hover {
+  text-decoration: underline;
+  color: #9cd7ff;
+}
+
+/* Main Portfolio Box */
+.portfolioBox {
   font-family: "M PLUS Rounded 1c", sans-serif;
-    font-weight: 400;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 1200px;
-    color: white;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4vw;
+  border-radius: 1rem;
+  width: 95%;
+  max-width: 80rem;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
 }
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-  }
-
-  .rightNav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .homeLink {
-    font-size: 28px;
-  }
-
-  .rightNav li {
-    font-size: 18px;
-  }
-}
-
