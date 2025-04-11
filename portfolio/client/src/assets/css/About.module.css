@@ -12,8 +12,8 @@
 }
 
 .aboutPhoto img {
-  width: 20vw;         /* Fluid image size based on viewport width */
-  max-width: 250px;    /* Don't get bigger than original */
+  width: 20vw;         
+  max-width: 250px;    
   height: auto;
   border-radius: 50%;
   margin-right: 2vw;
@@ -22,10 +22,10 @@
 .aboutText {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.25rem);  /* Fluid font size */
-  max-width: 60ch;      /* Limits line length for readability */
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  max-width: 60ch;      
   line-height: 1.6;
-  flex: 1 1 300px;       /* Allows shrinking on small screens */
+  flex: 1 1 300px;       
 }
 
 /* Just a little polish for smaller screens */

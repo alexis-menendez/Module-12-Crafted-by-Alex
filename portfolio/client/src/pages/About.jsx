@@ -2,14 +2,14 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from "../assets/css/About.module.css";
+import styles from "./client/src/assets/css/About.module.css";
 
 const About = () => {
   return (
     <div>
       <div className={styles.aboutContent}>
        <div className={styles.aboutPhoto}>
-        <img src="/assets/images/portfolio-picture-bigfoot.webp" alt="Bigfoot" />
+        <img src="./client/public/assets/images/portfolio-picture-bigfoot.webp" alt="Bigfoot" />
          </div>
            <div className={styles.aboutText}>
              <p>

@@ -1,7 +1,7 @@
 // file path: /portfolio/client/src/components/Sky.jsx
 
 import React, { useEffect, useState, useRef } from 'react';
-import styles from "../assets/css/Home.module.css";
+import styles from "./client/src/assets/css/Home.module.css";
 
 const Sky = () => {
   const containerRef = useRef(null);

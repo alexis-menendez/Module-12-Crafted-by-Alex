@@ -68,7 +68,7 @@ nav,
 
 /* --- MEDIA QUERIES FOR RESPONSIVE BEHAVIOR --- */
 
-/* ⬇️ Medium screens: logo on top, links in a row underneath */
+/* Medium screens: logo on top, links in a row underneath */
 @media (max-width: 900px) {
   .navbar {
     flex-direction: column;
@@ -96,7 +96,7 @@ nav,
   }
 }
 
-/* ⬇️ Smaller screens: apply styles, but no wrapping yet */
+/* Smaller screens: apply styles, but no wrapping yet */
 @media (max-width: 600px) {
   .navbar {
     align-items: stretch; 
@@ -117,7 +117,7 @@ nav,
   }
 }
 
-/* ⬇️ Slightly smaller screens: wrap into 2 rows later */
+/* Slightly smaller screens: wrap into 2 rows later */
 @media (max-width: 500px) {
   .navbar {
     align-items: stretch; 
@@ -138,7 +138,7 @@ nav,
   }
 }
 
-/* ⬇️ Very small screens: 1 link per row */
+/* Very small screens: 1 link per row */
 @media (max-width: 420px) {
   .navbar {
     align-items: stretch;
