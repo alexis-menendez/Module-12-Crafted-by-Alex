@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import styles from "./client/src/assets/css/Navigation.module.css";
+import styles from "../assets/css/Navigation.module.css";
 
 const Navigation = () => {
   const location = useLocation();

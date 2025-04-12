@@ -1,8 +1,8 @@
 // file path: /portfolio/client/src/pages/Contact.jsx
 
 import React, { useState } from 'react';
-import StarryBackground from './client/src/components/StarryBackground';
-import styles from './client/src/assets/css/Contact.module.css';
+import StarryBackground from '../components/StarryBackground';
+import styles from '../assets/css/Contact.module.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

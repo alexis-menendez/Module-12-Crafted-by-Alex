@@ -1,0 +1,330 @@
+/* file path: /portfolio/client/src/assets/css/Home.module.css */
+
+.home-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  .blueRectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background: radial-gradient(circle, midnightblue 20%, black 80%);
+    overflow: hidden;
+    transition: background 4s ease-in-out;
+  }
+  
+  .gradientOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: radial-gradient(circle, rgb(223, 178, 0) 20%, darkred 80%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
+  }
+  
+  .moon {
+    width: clamp(150px, 20vw, 350px);
+    height: clamp(150px, 20vw, 350px);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    transition: background-color 0.6s ease, box-shadow 0.6s ease;
+    position: absolute;
+    z-index: 3;
+    overflow: hidden;
+  }
+  
+  .moonHovered .moon {
+    background-color: #fff9c4;
+    box-shadow: 0 0 120px rgba(255, 255, 255, 1);
+  }
+  
+  .moonHovered .moon.moonGlowEclipse {
+    box-shadow: 0 0 100px 40px rgba(255, 150, 100, .5);
+    transition: box-shadow 3s ease-in-out;
+  }
+  
+  .eclipseDisc {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 50%;
+    left: -200%;
+    opacity: 0;
+    z-index: 4;
+  }
+  
+  .eclipseSlideIn {
+    animation: slideToCenter 9s ease-in-out forwards;
+  }
+  
+  .eclipseHold {
+    left: 0%;
+    opacity: 1;
+  }
+  
+  .eclipseFadeOut {
+    left: 0%;
+    opacity: 0;
+    transition: opacity 10s ease-in-out;
+  }
+  
+  .eclipseDimOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.9) 80%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 3s ease-in-out;
+  }
+  
+  .eclipseDimOverlayActive {
+    opacity: 1;
+  }
+  
+  @keyframes slideToCenter {
+    0% {
+      left: -200%;
+      opacity: 1;
+    }
+    100% {
+      left: 0%;
+      opacity: 1;
+    }
+  }
+  
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0.8;
+    box-shadow: 0 0 6px 1px rgba(255, 255, 255, 0.5);
+  }
+  
+  .starFadeOut {
+    opacity: 0 !important;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0) !important;
+    transition: opacity 2s ease-in-out, box-shadow 2s ease-in-out;
+  }
+  
+  .noTwinkle {
+    animation: none !important;
+  }
+  
+  .twinkle1 {
+    animation: twinkle 1s ease-in-out infinite;
+    animation-delay: 0s;
+  }
+  
+  .twinkle2 {
+    animation: twinkle 1.25s ease-in-out infinite;
+    animation-delay: .25s;
+  }
+  
+  .twinkle3 {
+    animation: twinkle 1.5s ease-in-out infinite;
+    animation-delay: .5s;
+  }
+  
+  .twinkle4 {
+    animation: twinkle 1.75s ease-in-out infinite;
+    animation-delay: .75s;
+  }
+  
+  .twinkle5 {
+    animation: twinkle 2s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+  
+  .twinkle6 {
+    animation: twinkle 2.25s ease-in-out infinite;
+    animation-delay: 1.25s;
+  }
+  
+  .twinkle7 {
+    animation: twinkle 2.5s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+  
+  .twinkle8 {
+    animation: twinkle 2.75s ease-in-out infinite;
+    animation-delay: 1.75s;
+  }
+  
+  .twinkle9 {
+    animation: twinkle 3s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+  
+  .twinkle10 {
+    animation: twinkle 3.25s ease-in-out infinite;
+    animation-delay: 2.25s;
+  }
+  
+  .twinkle11 {
+    animation: twinkle 3.5s ease-in-out infinite;
+    animation-delay: 2.5s;
+  }
+  
+  .twinkle12 {
+    animation: twinkle 3.75s ease-in-out infinite;
+    animation-delay: 2.75s;
+  }
+  
+  .twinkle13 {
+    animation: twinkle 4s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+  
+  .twinkle14 {
+    animation: twinkle 4.25s ease-in-out infinite;
+    animation-delay: 3.25s;
+  }
+  
+  .twinkle15 {
+    animation: twinkle 4.5s ease-in-out infinite;
+    animation-delay: 3.5s;
+  }
+  
+  .twinkle16 {
+    animation: twinkle 4.75s ease-in-out infinite;
+    animation-delay: 3.75s;
+  }
+  
+  .twinkle17 {
+    animation: twinkle 5s ease-in-out infinite;
+    animation-delay: 4s;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% {
+      opacity: 0.1;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.9);
+    }
+  }
+  
+  .connectionCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .cloud1,
+  .cloud2,
+  .cloud3,
+  .cloud4,
+  .cloud5,
+  .cloud6,
+  .cloud7,
+  .cloud8,
+  .cloud9,
+  .cloud10 {
+    position: absolute;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 5;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    display: block;
+  }
+  
+  .cloud1 {
+    width: clamp(200px, 25vw, 450px);
+    animation: floatCloud calc(60s + 2vw) linear infinite 1s;
+    top: 10%;
+    left: -35%;
+  }
+  
+   .cloud2 {
+    width: clamp(200px, 25vw, 1050px);
+    animation: floatCloud calc(30s + 2vw) linear infinite 6s;
+    top: 50%;
+    left: -65%;
+  }
+  
+  .cloud3 {
+    width: clamp(200px, 25vw, 700px);
+    animation: floatCloud calc(40s + 2vw) linear infinite 12s;
+    top: 20%;
+    left: -51%;
+  }
+  
+  .cloud4 {
+    width: clamp(200px, 25vw, 550px);
+    animation: floatCloud calc(50s + 2vw) linear infinite 14s;
+    top: 40%;
+    left: -42%;
+  }
+  
+  .cloud5 {
+    width: clamp(200px, 25vw, 950px);
+    animation: floatCloud calc(60s + 2vw) linear infinite 21s;
+    top: 30%;
+    left: -70%;
+  }
+  
+  .cloud6 {
+    width: clamp(200px, 25vw, 600px);
+    animation: floatCloud calc(70s + 2vw) linear infinite 26s;
+    top: 15%;
+    left: -45%;
+  }
+  
+  .cloud7 {
+    width: clamp(200px, 25vw, 450px);
+    animation: floatCloud calc(90s + 2vw) linear infinite 42s;
+    top: 55%;
+    left: -31%;
+  }
+  
+  .cloud8 {
+    width: clamp(200px, 25vw, 950px);
+    animation: floatCloud calc(75s + 2vw) linear infinite 34s;
+    top: 25%;
+    left: -70%;
+  }
+  
+  .cloud9 {
+    width: clamp(200px, 25vw, 700px);
+    animation: floatCloud calc(100s + 2vw) linear infinite 41s;
+    top: 45%;
+    left: -55%;
+  }
+  
+  .cloud10 {
+    width: clamp(200px, 25vw, 550px);
+    animation: floatCloud calc(80s + 2vw) linear infinite 36s;
+    top: 35%;
+    left: -40%;
+  }
+  
+  @keyframes floatCloud {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(150vw);
+    }
+  }

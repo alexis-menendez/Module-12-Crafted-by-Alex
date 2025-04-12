@@ -1,7 +1,7 @@
 // file path: /portfolio/client/src/components/Footer.jsx
 
 import React from 'react';
-import styles from "./client/src/assets/css/Footer.module.css";
+import styles from "../assets/css/Footer.module.css";
 
 const Footer = () => {
   return (

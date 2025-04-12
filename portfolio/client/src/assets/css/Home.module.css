@@ -231,95 +231,145 @@
   pointer-events: none;
 }
 
-[class*="cloud"] {
+.cloud1,
+.cloud2,
+.cloud3,
+.cloud4,
+.cloud5,
+.cloud6,
+.cloud7,
+.cloud8,
+.cloud9,
+.cloud10 {
   position: absolute;
   opacity: 0.6;
   pointer-events: none;
-  z-index: 5; 
-  animation-name: floatCloud;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  z-index: 5;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  display: block;
 }
 
 .cloud1 {
-  width: clamp(200px, 25vw, 450px);
-  animation-duration: calc(60s + 2vw);
-  animation-delay: 1s;
+  width: clamp(200px, 25vw, 650px);
+  position: absolute;
   top: 10%;
   left: -35%;
+  animation: floatCloud 62s linear 1s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
- .cloud2 {
-  width: clamp(200px, 25vw, 1050px);
-  animation-duration: calc(30s + 2vw);
-  animation-delay: 6s;
+.cloud2 {
+  width: clamp(200px, 25vw, 1250px);
+  position: absolute;
   top: 50%;
   left: -65%;
+  animation: floatCloud 32s linear 6s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud3 {
-  width: clamp(200px, 25vw, 700px);
-  animation-duration: calc(40s + 2vw);
-  animation-delay: 12s;
+  width: clamp(200px, 25vw, 900px);
+  position: absolute;
   top: 20%;
   left: -51%;
+  animation: floatCloud 42s linear 12s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud4 {
-  width: clamp(200px, 25vw, 550px);
-  animation-duration: calc(50s + 2vw);
-  animation-delay: 14s;
+  width: clamp(200px, 25vw, 750px);
+  position: absolute;
   top: 40%;
   left: -42%;
+  animation: floatCloud 52s linear 14s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud5 {
-  width: clamp(200px, 25vw, 950px);
-  animation-duration: calc(60s + 2vw);
-  animation-delay: 21s;
+  width: clamp(200px, 25vw, 1150px);
+  position: absolute;
   top: 30%;
   left: -70%;
+  animation: floatCloud 62s linear 21s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud6 {
-  width: clamp(200px, 25vw, 600px);
-  animation-duration: calc(70s + 2vw);
-  animation-delay: 26s;
+  width: clamp(200px, 25vw, 800px);
+  position: absolute;
   top: 15%;
   left: -45%;
+  animation: floatCloud 72s linear 26s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud7 {
-  width: clamp(200px, 25vw, 450px);
-  animation-duration: calc(90s + 2vw);
-  animation-delay: 42s;
+  width: clamp(200px, 25vw, 650px);
+  position: absolute;
   top: 55%;
   left: -31%;
+  animation: floatCloud 92s linear 42s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud8 {
-  width: clamp(200px, 25vw, 950px);
-  animation-duration: calc(75s + 2vw);
-  animation-delay: 34s;
+  width: clamp(200px, 25vw, 1150px);
+  position: absolute;
   top: 25%;
   left: -70%;
+  animation: floatCloud 77s linear 34s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud9 {
-  width: clamp(200px, 25vw, 700px);
-  animation-duration: calc(100s + 2vw);
-  animation-delay: 41s;
+  width: clamp(200px, 25vw, 900px);
+  position: absolute;
   top: 45%;
   left: -55%;
+  animation: floatCloud 102s linear 41s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .cloud10 {
-  width: clamp(200px, 25vw, 550px);
-  animation-duration: calc(80s + 2vw);
-  animation-delay: 36s;
+  width: clamp(200px, 25vw, 750px);
+  position: absolute;
   top: 35%;
   left: -40%;
+  animation: floatCloud 82s linear 36s infinite;
+  z-index: 5;
+  display: block;
+  opacity: 0.6;
+  pointer-events: none;
 }
+
 
 @keyframes floatCloud {
   0% {
