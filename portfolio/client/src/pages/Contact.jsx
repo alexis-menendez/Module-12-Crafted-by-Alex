@@ -12,6 +12,7 @@ const Contact = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,7 +24,7 @@ const Contact = () => {
     return re.test(String(email).toLowerCase());
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
@@ -34,9 +35,33 @@ const Contact = () => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-    } else {
-      setErrors({});
-      alert('Form submitted successfully!');
+      setSubmissionStatus(null);
+      return;
+    }
+
+    // ✅ Detect local dev vs production
+    const baseURL = window.location.hostname === 'localhost'
+      ? 'http://localhost:5000'
+      : '';
+
+    try {
+      const response = await fetch(`${baseURL}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmissionStatus('Message sent successfully! 🌟');
+        setFormData({ name: '', email: '', message: '' });
+        setErrors({});
+      } else {
+        const data = await response.json();
+        setSubmissionStatus(`Error: ${data.error || 'Something went wrong.'}`);
+      }
+    } catch (err) {
+      console.error(err);
+      setSubmissionStatus('Failed to send message. Please try again later.');
     }
   };
 
@@ -79,6 +104,11 @@ const Contact = () => {
           </div>
           <button type="submit">Submit</button>
         </form>
+
+        {submissionStatus && (
+          <p style={{ marginTop: '1rem', color: '#ffdd57' }}>{submissionStatus}</p>
+        )}
+
         <p>
           You can also reach me on <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
