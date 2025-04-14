@@ -5,7 +5,13 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-dotenv.config();
+// Enable __dirname in ES module context
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// Explicitly tell dotenv where to find the .env file
+dotenv.config({ path: path.join(__dirname, '.env') });
+
+//dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -17,7 +23,13 @@ app.use(express.json());
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
+  console.log('📬 Incoming contact form submission:');
+  console.log('Name:', name);
+  console.log('Email:', email);
+  console.log('Message:', message);
+
   if (!name || !email || !message) {
+    console.warn('⚠️ Missing fields in contact form');
     return res.status(400).json({ error: 'All fields are required.' });
   }
 
@@ -25,14 +37,16 @@ app.post('/api/contact', async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER, // Your Gmail
-        pass: process.env.EMAIL_PASS, // Gmail App Password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
+    console.log('🔐 Email transporter created');
+
     const mailOptions = {
       from: email,
-      to: ['alexis.246.menendez@gmail.com'],
+      to: ['alexis.246.menendez@gmail.com', 'alexis.menendez@austincc.edu', 'menendez.alex.d@gmail.com'],
       subject: `New Contact Message from ${name}`,
       text: `
         Name: ${name}
@@ -41,18 +55,18 @@ app.post('/api/contact', async (req, res) => {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    console.log('📨 Sending email...');
+    const info = await transporter.sendMail(mailOptions);
+    console.log('✅ Email sent:', info.response);
+
     res.status(200).json({ message: 'Email sent successfully.' });
   } catch (err) {
-    console.error(err);
+    console.error('❌ Failed to send email:', err);
     res.status(500).json({ error: 'Failed to send email.' });
   }
 });
 
 // ---- Serve React Frontend ----
-
-// Enable __dirname in ES module context
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Path to the built client files
 const clientPath = path.join(__dirname, '..', 'client', 'dist');
