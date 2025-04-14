@@ -4,7 +4,12 @@
   "private": true,
   "description": "React based Portfolio for Alex Menendez.",
   "scripts": {
-    "postinstall": "npm install --prefix client && npm install --prefix server && npm run build --prefix client",
+    "postinstall": "npm run install-client && npm run install-server && npm run build-client",
+    "install-client": "cd client && npm install",
+    "install-server": "cd server && npm install",
+    "build-client": "cd client && npm run build",
+
+
     "start": "node server/index.js",
     "render-build": "./scripts/render-build.sh",
     
@@ -21,9 +26,6 @@
     "format": "npm run format:client && npm run format:server",
     "format:client": "npm --prefix client run format",
     "format:server": "npm --prefix server run format"
-  },
-  "engines": {
-    "node": "18.x"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
