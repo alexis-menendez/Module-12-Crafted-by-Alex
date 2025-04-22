@@ -73,9 +73,11 @@ npm run dev
 
 ## Screenshots
 
-![homepage-screenshot](https://github.com/alexis-menendez/Module-13-DevMatch/blob/main/Assets/home.png?raw=true)
-![searchpage-screenshot](https://github.com/alexis-menendez/Module-13-DevMatch/blob/main/Assets/search.png?raw=true)
-![homepage-savedpage](https://github.com/alexis-menendez/Module-13-DevMatch/blob/main/Assets/saved.png?raw=true)
+![homepage-screenshot](https://github.com/alexis-menendez/Module-12-Crafted-By-Alex/blob/main/Assets/p-home.png?raw=true)
+![about-screenshot](https://github.com/alexis-menendez/Module-12-Crafted-By-Alex/blob/main/Assets/p-about.png?raw=true)
+![portfolio-screenshot](https://github.com/alexis-menendez/Module-12-Crafted-By-Alex/blob/main/Assets/p-portfolio.png?raw=true)
+![contact-screenshot](https://github.com/alexis-menendez/Module-12-Crafted-By-Alex/blob/main/Assets/p-contact.png?raw=true)
+![resume-screenshot](https://github.com/alexis-menendez/Module-12-Crafted-By-Alex/blob/main/Assets/p-resume.png?raw=true)
 
 
 
@@ -83,7 +85,7 @@ npm run dev
 
 ## Walkthrough Video
 
-[DevMatch Walkthrough](https://drive.google.com/file/d/1fGSTZHCKIwvNWN3GSOGUw6fkgYGoC7iZ/view?usp=sharing)
+[DevMatch Walkthrough](https://drive.google.com/file/d/1xTYGZXhS27lcVUFJ1mtKC4FvDFeLgCee/view?usp=sharing)
 
 ---
 
