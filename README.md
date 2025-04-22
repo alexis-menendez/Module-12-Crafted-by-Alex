@@ -85,7 +85,7 @@ npm run dev
 
 ## Walkthrough Video
 
-[DevMatch Walkthrough](https://drive.google.com/file/d/1xTYGZXhS27lcVUFJ1mtKC4FvDFeLgCee/view?usp=sharing)
+[Portfolio Walkthrough](https://drive.google.com/file/d/1xTYGZXhS27lcVUFJ1mtKC4FvDFeLgCee/view?usp=sharing)
 
 ---
 
