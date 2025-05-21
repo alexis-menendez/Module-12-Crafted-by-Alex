@@ -8,10 +8,10 @@ const Resume = () => {
   return (
     <StarryBackground>
       <div className={styles.resumeContent}>
-        <a href="./public/assets/pdf/TechResume2025.pdf" download="TechResume2025.pdf">
+        <a href="./public/assets/pdf/TechResume2025.pdf" download="Portfolio-Resume.pdf">
           Thanks for stopping by!
         </a>
-        <a href="./public/assets/pdf/TechResume2025.pdf" download="TechResume2025.pdf">
+        <a href="./public/assets/pdf/TechResume2025.pdf" download="Portfolio-Resume-Download.pdf">
           Click here to download my resume as a PDF
         </a>
         <div className={styles.resumeImage}>
