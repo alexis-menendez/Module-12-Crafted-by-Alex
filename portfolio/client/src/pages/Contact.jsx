@@ -110,7 +110,7 @@ const Contact = () => {
         )}
 
         <p>
-          You can also reach me on <a href="https://github.com/yourgithub" target="_blank" rel="noopener noreferrer">GitHub</a>.
+          You can also reach me on <a href="https://github.com/alexis-menendez" target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       </div>
     </StarryBackground>
